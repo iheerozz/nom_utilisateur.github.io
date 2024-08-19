@@ -1,0 +1,808 @@
+<script>
+  if (window.innerWidth <= 768) {
+    window.location.href = "mobile-version.html"; // Replace with your mobile version URL
+  }
+</script>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Francés con Guillaume</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1b263b;
+    color: #e0e1dd;
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+header {
+    background-color: #1b263b;
+    color: #e0e1dd;
+    padding: 18px 0;
+    display: flex;
+    justify-content: space-between;
+  align-items: center;
+  position: fixed; /* Fixe le header en haut de la page */
+    top: 0; /* Positionne le header en haut de la fenêtre */
+    width: 100%; /* Assure que le header occupe toute la largeur de la fenêtre */
+    z-index: 1000; /* Assure que le header reste au-dessus des autres éléments de la page */
+  border: 2px solid rgba(192, 192, 192, 0.3); /* Contour argenté avec une transparence de 30% */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Légère ombre portée */
+    border-radius: 5px; /* Coins légèrement arrondis */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #e0e1dd; 
+    text-decoration: none;
+    font-weight: normal;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #4C4CFF;
+}
+.intro {
+    background: linear-gradient(135deg, #3A1C71, #D76D77, #2B32B2);
+    color: #e0e1dd;
+    padding: 60px 0;
+}
+
+.intro-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.intro-text {
+    width: 50%;
+}
+
+.intro h2 {
+    font-size: 2.5em;
+    color: #e0e1dd;
+}
+
+.intro p {
+    font-size: 1.2em;
+    color: #e0e1dd;
+}
+
+.cta-button {
+    background-color: #6C63FF;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1.2em;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.cta-button:hover {
+    background-color: #4C4CFF;
+    transition: 0.3s;
+}
+
+.video-container {
+    border-radius: 15px;
+    overflow: hidden;
+    width: 600px;
+    height: 338px;
+    margin-left: 20px;
+}
+
+iframe {
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+.reviews {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 60px 0;
+}
+
+.review-section {
+    text-align: center;
+    margin-bottom: 20px; /* Réduit l'espace entre les avis et la section suivante */
+}
+
+.review-section h3 {
+    font-size: 2em;
+    color: #e0e1dd;
+}
+
+.review-card {
+    background-color: #415a77;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: left;
+    border: 2px solid transparent;
+}
+
+.review-card:hover {
+    transform: scale(1.05);
+    border-color: #4C4CFF;
+}
+
+.review-card img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.review-card h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: #e0e1dd;
+}
+
+.review-card .stars {
+    color: #f39c12;
+    margin-bottom: 10px;
+}
+
+.review-card p {
+    font-size: 0.9em;
+    color: #e0e1dd;
+    text-align: justify;
+}
+
+footer {
+    background-color: #0d1b2a;
+    color: #e0e1dd;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Section du programme */
+#program {
+    padding-top: 80px; /* Ajoute de l'espace au-dessus des images */
+    text-align: center;
+}
+
+#program h2 {
+    font-size: 2.8em; /* Agrandit la police du titre */
+    margin-bottom: 40px; /* Augmente l'espace entre le titre et les images */
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+
+.image-container img {
+    max-width: 250%; /* Augmente la taille des images */
+    height: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-container img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    nav ul {
+        float: none;
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .intro-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro-text, .intro-video {
+        width: 100%;
+    }
+
+    .review-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* CSS pour la section Precios */
+.precios h2 {
+    font-size: 3em;
+    margin-bottom: 40px;
+    color: #e0e1dd;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.pricing-tables {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    gap: 30px;
+    padding: 40px;
+    background: linear-gradient(145deg, #1e2a38, #121a24);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.pricing-table {
+    background-color: #1b263b;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 350px;
+    color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-table:hover {
+    transform: scale(1.08);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.pricing-header {
+    padding: 20px;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: #1e2a38;
+    position: relative;
+    z-index: 1;
+}
+
+.individual .pricing-header,
+.duo .pricing-header {
+    background: linear-gradient(135deg, #333333, #444444);
+}
+
+.group.highlight {
+    transform: scale(1.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.group.highlight .pricing-header {
+    background: linear-gradient(135deg, #0099ff, #00ccff);
+    border: 2px solid #00ccff;
+}
+
+.pricing-table::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(45deg);
+    transition: opacity 0.3s ease;
+    z-index: 0;
+}
+
+.pricing-table:hover::before {
+    opacity: 0.2;
+}
+
+.price {
+    font-size: 2em;
+    color: #ffffff;
+    margin: 15px 0;
+}
+
+.description {
+    font-size: 1em;
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 1;
+    position: relative;
+}
+
+.features li {
+    font-size: 0.83em;
+    padding: 12px;
+    border-bottom: 1px solid #333;
+    display: flex;
+    align-items: center;
+    text-align: left; /* Aligne le texte à gauche */
+}
+
+.features li span {
+    margin-right: 10px;
+    font-size: 1.5em;
+}
+
+.features li span.check {
+    color: #4caf50;
+}
+
+.features li span.cross {
+    color: #f44336;
+}
+
+.cross-small {
+    color: #f44336;
+    font-size: 1em;
+    margin-left: 8px;
+}
+
+.group.highlight .features li:nth-child(5) {
+    position: relative;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.group.highlight .features li:nth-child(5):hover {
+    color: #ffd700; /* Change la couleur du texte au doré */
+    text-shadow: 0px 0px 10px rgba(255, 215, 0, 0.7); /* Ajoute une légère ombre dorée */
+}
+
+.note {
+    margin-top: 50px;
+    font-size: 1em;
+    color: #e0e1dd;
+    text-align: center;
+}
+
+.note strong {
+    color: #ffaa00;
+}
+
+.asterisk {
+    font-size: 2.2em; /* Taille de l'astérisque */
+    color: #ffaa00;
+    margin-left: 2px;
+}
+
+.asterisk-small {
+    font-size: 3.5em; /* Si l'astérisque est plus petit ailleurs */
+    color: #ffaa00;
+    margin-left: 2px;
+}
+
+
+@media (max-width: 768px) {
+    .pricing-tables {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .pricing-table {
+        max-width: 100%;
+    }
+}
+
+#precios {
+    scroll-margin-top: 100px; /* Ajuste cette valeur selon la hauteur de ta barre de navigation */
+}
+      
+      
+   .intro {
+            background: linear-gradient(135deg, #3A1C71, #D76D77, #2B32B2);
+            color: #e0e1dd;
+            padding: 60px 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-title {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 50px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+            color: #e0e1dd;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #e0e1dd; 
+            text-decoration: none;
+            font-weight: normal;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #4C4CFF;
+        }
+
+.intro {
+    background: linear-gradient(135deg, #162C51, #203A6E, #131635);
+    color: #e0e1dd;
+    padding: 60px 0;
+}
+
+        .intro-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .intro-text {
+            width: 50%;
+        }
+
+        .intro h2 {
+            font-size: 2.5em;
+            color: #e0e1dd;
+        }
+
+        .intro p {
+            font-size: 1.2em;
+            color: #e0e1dd;
+        }
+
+        .cta-button {
+            background-color: #6C63FF;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 1.2em;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            background-color: #4C4CFF;
+            transition: 0.3s;
+        }
+
+        .video-container {
+            border-radius: 15px;
+            overflow: hidden;
+            width: 660px;
+            height: 375px;
+            margin-left: 20px;
+        }
+
+        iframe {
+            border-radius: 15px;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .reviews {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 60px 0;
+        }
+
+        .review-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .review-section h3 {
+            font-size: 2em;
+            color: #e0e1dd;
+        }
+
+        .review-card {
+            background-color: #415a77;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            text-align: left;
+            border: 2px solid transparent;
+        }
+
+        .review-card:hover {
+            transform: scale(1.05);
+            border-color: #4C4CFF;
+        }
+
+        .review-card img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .review-card h3 {
+            margin: 10px 0;
+            font-size: 1.2em;
+            color: #e0e1dd;
+        }
+
+        .review-card .stars {
+            color: #f39c12;
+            margin-bottom: 10px;
+        }
+
+        .review-card p {
+            font-size: 0.9em;
+            color: #e0e1dd;
+            text-align: justify;
+        }
+
+        footer {
+            background-color: #0d1b2a;
+            color: #e0e1dd;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .image-container img {
+            max-width: 75%; /* Grossir les images de la section "Lo que te espera en el programa" */
+            height: auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        .quien-somos {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .quien-somos h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .image-container-quien-somos {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .image-container-quien-somos img {
+            width: 250%; /* Ajuste pour occuper plus d'espace */
+            height: auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-container-quien-somos img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+
+            nav ul {
+                float: none;
+                text-align: center;
+            }
+
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .intro-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .intro-text, .intro-video {
+                width: 100%;
+            }
+
+            .review-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo-title">
+                <img src="https://i.ibb.co/mzLZ2z8/Untitled-design-2.png" alt="Logo" class="logo">
+                <h1>Francés con Guillaume</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#program">El programa</a></li>
+                    <li><a href="#reviews">Opiniones de estudiantes</a></li>
+                    <li><a href="#quien-somos">Quiénes somos</a></li>
+                    <li><a href="#Precios">Precios</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="intro" class="intro">
+        <div class="container">
+            <div class="intro-content">
+                <div class="intro-text">
+                    <h2><span style="color: #4C4CFF;">Aprende francés en línea</span> con un enfoque <span style="color: #e0e1dd;">único</span></h2>
+                    <p>Un enfoque único en la enseñanza del francés a través de juegos y actividades interactivas. Perfecto para todos los niveles, desde principiante hasta avanzado.</p>
+                    <a href="#program" class="cta-button">Conozca el programa</a>
+                </div>
+                <div class="intro-video video-container">
+                    <iframe src="https://www.youtube.com/embed/xg2OVgcuzV8?si=Lhh62RCpxjFGVJm5&autoplay=1&loop=1&playlist=xg2OVgcuzV8" title="Video sobre el programa Francés con Guillaume" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Section du programme -->
+    <section id="program" class="container">
+        <h2 style="text-align: center; color: #e0e1dd;">Lo que te espera en el programa</h2>
+        <div class="image-container">
+            <img src="https://i.ibb.co/fNqKcwJ/1000-actividades-8.png" alt="1000-actividades-8" class="smaller-image"> 
+            <img src="https://i.ibb.co/dLddMRd/1000-actividades-4.png" alt="1000-actividades-4" class="smaller-image">
+        </div>
+    </section>
+
+  
+    <section id="reviews" class="container">
+        <div class="review-section">
+            <h3>Lo que los estudiantes dicen de mis clases</h3>
+        </div>
+        <div class="reviews">
+            <div class="review-card">
+                <h3>Manuela</h3>
+                <div class="stars">★★★★★</div>
+                <p>"Tuve la suerte de tenerlo como profesor y debo decir que sus clases son excepcionales. No solo son dinámicas y divertidas, sino que también demuestra una gran paciencia con sus estudiantes. Lo que más me gusta de sus cursos es que se enfoca en hacer que uno entienda el francés de una manera más práctica y fácil. Sus técnicas y recursos didácticos son muy efectivos para aprender y retener el idioma, y logra transmitir su pasión por el francés a sus estudiantes. Gracias a sus enseñanzas, logré aprobar mi examen para titularme de la universidad y me siento mucho más segura en mi capacidad para hablar francés."</p>
+            </div>
+            <div class="review-card">
+                <h3>Paula</h3>
+                <div class="stars">★★★★★</div>
+                <p>"He tenido clases de francés con diferentes profesores y con ninguno de ellos había avanzado tan rápido (y divirtiéndome tanto) como lo hice con Guillaume. Cuando empecé con él, había dejado de estudiar el idioma hacía más de seis años y había olvidado prácticamente todo lo que sabía. Sus clases, junto con todo el material adicional que las acompaña, me permitieron desenterrar lo aprendido y, sin darme cuenta, llegar a un nivel más avanzado del idioma en poquísimo tiempo. Ha sido una experiencia muy enriquecedora porque me ha permitido conocer mucho más sobre la cultura francesa en particular y sobre la francofonía en general."</p>
+            </div>
+            <div class="review-card">
+                <h3>Laura</h3>
+                <div class="stars">★★★★★</div>
+                <p>"Aprender francés con Guillaume ha sido una gran experiencia para mí. Empecé hace poco más de dos meses, desde el nivel más básico y me siento orgullosa de cuánto he aprendido en este corto tiempo. Me gusta mucho que el programa que ofrece Guillaume no solamente está compuesto por las clases en línea, sino que, además, contiene otras herramientas que son muy útiles para reforzar el proceso de aprendizaje, como, por ejemplo, podcasts, videos y mapas mentales."</p>
+            </div>
+        </div>
+    </section> 
+
+    <!-- Section Quién Somos -->
+    <section id="quien-somos" class="container quien-somos">
+        <h2>Quién Somos</h2>
+        <div class="image-container-quien-somos">
+            <img src="https://i.ibb.co/h7Cntgx/1000-actividades-11.png" alt="1000-actividades-11">
+            <img src="https://i.ibb.co/SNbnVvY/1000-actividades-9.png" alt="1000-actividades-9">
+        </div>
+    </section>
+  
+<!-- Section Precios -->
+<section id="Precios" class="container precios">
+    <h2>Precios</h2>
+    <div class="pricing-tables">
+        <div class="pricing-table individual">
+            <div class="pricing-header">
+                <h3>Individual</h3>
+                <p class="price">$75.000 COP/hora</p>
+                <p class="description">Perfecto para un aprendizaje personalizado y enfocado en tus necesidades específicas.</p>
+            </div>
+            <ul class="features">
+                <li><span class="check">✔</span> Clase personalizada</li>
+                <li><span class="check">✔</span> Acceso a recursos exclusivos</li>
+                <li><span class="cross">✖</span> Sesiones grupales</li>
+                <li><span class="cross">✖</span> Actividades de grupo</li>
+                <li><span class="cross">✖</span> Competiciones exclusivas</li>
+            </ul>
+        </div>
+
+       <div class="pricing-table duo">
+    <div class="pricing-header">
+        <h3>Duo/Trio</h3>
+        <p class="price">$55.000 COP/hora</p>
+        <p class="description">Ideal para parejas o amigos que desean mejorar juntos y practicar en equipo.</p>
+    </div>
+    <ul class="features">
+        <li><span class="check">✔</span> Clase semi-personalizada</li>
+        <li><span class="check">✔</span> Acceso a recursos exclusivos</li>
+        <li><span class="cross">⊗</span> Sesiones grupales</li>
+        <li><span class="cross">✖</span> Actividades de grupo</li>
+        <li><span class="cross">✖</span> Competiciones exclusivas</li>
+    </ul>
+</div>
+
+     
+        <div class="pricing-table group highlight">
+            <div class="pricing-header">
+                <h3>Grupo de 4 a 6</h3>
+                <p class="price">$38.000 COP/hora</p>
+                <p class="description">Perfecto para aprender en un ambiente social y participar en divertidos juegos de grupo.</p>
+            </div>
+            <ul class="features">
+                <li><span class="check">✔</span> Clase interactiva</li>
+                <li><span class="check">✔</span> Acceso a recursos exclusivos</li>
+                <li><span class="check">✔</span> Sesiones grupales</li>
+                <li><span class="check">✔</span> Actividades de grupo</li>
+                <li><span class="check">✔</span> Competiciones exclusivas<span class="asterisk">*</span></li>
+            </ul>
+        </div>
+    </div>
+    <p class="note"><span class="asterisk">*</span>Compite y mejora tu francés cada dos semanas a través de divertidos juegos en nuestras competiciones exclusivas para grupos de 4 a 6 personas. <strong>¡Sesión 100% gratuita!</strong></p>
+</section>
+
+  
+
